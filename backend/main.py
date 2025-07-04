@@ -33,10 +33,17 @@ class URLRequest(BaseModel):
 
 def generate_short_code(length=6):
     characters = string.ascii_letters + string.digits
+    counter = 0
     while True:
+        if counter = 3
+        raise HTTPException(status_code=400, detail="We reached our limits")
+
         code = ''.join(random.choices(characters, k=length))
         if code not in db:
             return code
+        else:
+         # log.error
+         counter + 1
 
 @app.post("/api/shorten")
 def shorten_url(request: URLRequest):
