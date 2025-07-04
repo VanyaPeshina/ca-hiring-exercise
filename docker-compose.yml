@@ -3,16 +3,16 @@ services:
   backend:
     command: uvicorn main:app --reload --host 0.0.0.0 --port 5000
     build: ./backend
-    working_dir: /app/backend
+    working_dir: ${PWD}/backend
     ports:
       - "5000:5000"
     volumes:
-      - ./backend:/app/backend
+      - "${PWD}/backend:${PWD}/backend"
   frontend:
     build: ./frontend
-    working_dir: /app/frontend
+    working_dir: ${PWD}/frontend
     volumes:
-      - ./frontend:/app/frontend
+      - "${PWD}/frontend:${PWD}/frontend"
     ports:
       - "3000:3000"
     depends_on:
