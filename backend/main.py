@@ -5,6 +5,13 @@ from fastapi.middleware.cors import CORSMiddleware
 import string, random
 import logging
 
+## Key Improvements
+# In-memory disctionary db mapping short codes to URLs
+# Short code generator using random string (avoiding collisions)
+# URL validation via Pydantic's HttpUrl
+# Proper 404 handling for unknown short codes
+# logging
+
 app = FastAPI()
 logger = logging.getLogger("uvicorn.error")
 
